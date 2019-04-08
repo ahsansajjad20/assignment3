@@ -1,0 +1,43 @@
+<html>
+<head>
+<link href="signup.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="signup">
+    <form name="myForm" action="login.html" onsubmit="return validateForm()" method="post">
+    <h2 style="color: #fff;">Sign Up</h2>
+    <input type="text" name="username" placeholder="Enter First name" required><br><br>
+    <input type="text" name="username" placeholder="Enter Last name" required><br><br>
+    <input type="password" name="pass" placeholder="Enter Password" required><br><br>    
+    <input type="password" name="confirm" placeholder="Confirm Password" required><br><br>   
+    <input type="text" placeholder="Enter Email address" name="email" required><br><br>  
+    <input type="submit" value="Sign up"><br><br>
+        <script>
+function validateForm() {
+    var newp = document.forms["myForm"]["email"].value;
+    var pass = document.forms["myForm"]["pass"].value;
+    var confirm = document.forms["myForm"]["confirm"].value;
+    var re = /\S+@\S+\.\S+/;
+    if(pass != confirm){
+         alert("password not matching");
+         return false;
+    }
+    else if(!re.test(newp)){
+        alert("Email invalid");
+        return false;
+    }
+    else
+    {
+        alert("signup successful");
+    return true;
+}
+}
+
+</script>
+        Already have account?<a href="login.html" style= font-family:sans-serif; font-color: black;">Log In</a>
+    </form>
+    
+    </div>
+</body>
+</html>

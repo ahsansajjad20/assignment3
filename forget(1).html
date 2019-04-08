@@ -1,0 +1,37 @@
+<html>
+<head>
+<link href="forget.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="forget">
+
+<form name="myForm" action="login.html" onsubmit="return validateForm()" method="post">
+
+<h2 align="center" style="color:#fff;">Forget password</h2>
+<h5 style="font-size:14px; color:yellow;">Enter email here that you used on your account.We send link on your email to reset your password.</h5>
+<input type="text" name="username" placeholder="Enter your email" required="" /><br /><br />
+<input type="submit" value="Send" /><br /><br />
+<a href="login.html">Go back to Home page</a><br /><br />
+
+<script>
+function validateForm() {
+    var newp = document.forms["myForm"]["username"].value;
+    
+    var re = /\S+@\S+\.\S+/;
+    if(!re.test(newp)){
+        alert("Email invalid");
+        return false;
+    }
+    else
+    {
+        alert("Message sent");
+    return true;
+}
+}
+
+</script>
+</form>
+</div>
+</body>
+</html>

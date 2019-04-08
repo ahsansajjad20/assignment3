@@ -1,0 +1,32 @@
+<html>
+<head>
+<link href="reset.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="reset">
+
+<form name="myForm" action="login.html" onsubmit="return validateForm()" method="post">
+<h2 align="center" style="color:#fff;">Reset password</h2>
+<input type="password" name="old" placeholder="Enter Old password" required /><br /><br />
+<input type="password" name="new" placeholder="Enter New password" required /><br /><br />
+<input type="password" name="Confirm" placeholder="Confirm new password" required /><br /><br />
+<input type="submit" value="Save" /><br /><br />
+<a href="login.html" style="text-decoration:none;">Go back to Home page</a><br /><br />
+
+<script>
+function validateForm() {
+	var newp = document.forms["myForm"]["new"].value;
+	var old = document.forms["myForm"]["old"].value;
+	var confirm = document.forms["myForm"]["Confirm"].value;
+	if(newp != confirm){
+         alert("password not matching");
+         return false;
+	}
+    return true;
+}
+</script>
+</form>
+</div>
+</body>
+</html>
